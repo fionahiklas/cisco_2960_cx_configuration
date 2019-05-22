@@ -73,6 +73,21 @@ transport input ssh
 end
 ```
 
+### AAA
+
+```
+enable
+configure terminal
+aaa new-model
+aaa authentication login default local
+aaa authorization exec default local
+aaa authorization network default local
+username admin privilege 15 password 0 SomePassword
+end
+show running-config
+copy running-config startup-config
+```
+
 
 ## Tools
 
