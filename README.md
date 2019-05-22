@@ -6,11 +6,12 @@ The aim is to be able to use Ansible to
 
 ## Connections
 
-
+```
 192.168.32.0/24            ________________
 ----------------port 12---|                |
                           | Cisco 2960-CX  |---- Serial Console
                           |________________|
+```
 						  
 						  
 ## Initial setup
