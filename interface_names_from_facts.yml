@@ -1,0 +1,18 @@
+---
+- name: Read the list of interfaces
+  hosts: switch2960cx
+  gather_facts: no
+
+  tasks:
+    - name: List interfaces
+      ios_facts:
+        gather_subset:
+          - interfaces
+      register: interface_dict
+
+    - name: Debug output
+      debug:
+        msg: "Interfaces: {{ item.key }}"
+      loop: "{{ lookup('dict', interface_dict.ansible_facts.ansible_net_interfaces ) }}"
+
+    

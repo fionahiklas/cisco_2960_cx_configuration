@@ -157,6 +157,11 @@ This simply prints out the lines of text from stdout from running an IOS command
 * [Creating single variable vault values](https://docs.ansible.com/ansible/latest/user_guide/playbooks_vault.html#single-encrypted-variable)
 * [Working with inventories](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html)
 * [Ansible ios_command module](https://docs.ansible.com/ansible/latest/modules/ios_command_module.html)
+* [Debug module](https://docs.ansible.com/ansible/latest/modules/debug_module.html)
+* [ios_facts module](https://docs.ansible.com/ansible/latest/modules/ios_facts_module.html)
+* [Ansible loops](https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html)
+* [Ansible dict key/value pairs](https://docs.ansible.com/ansible/latest/plugins/lookup/dict.html)
+* 
 
 ### Cisco Documentation
 
