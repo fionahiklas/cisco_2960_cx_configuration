@@ -1,0 +1,52 @@
+---
+- name: Configure VLAN Membership
+  hosts: switch2960cx
+  gather_facts: no
+
+  tasks:
+    - name: Reset interface
+      ios_l2_interface:
+        name: GigabitEthernet0/1
+        state: unconfigured
+
+    - name: Configure trunking
+      ios_l2_interface:
+        name: GigabitEthernet0/1
+        mode: trunk
+        native_vlan: 1
+        trunk_allowed_vlans: 6-8
+        state: present
+        
+      
+    - name: Add guest VLAN
+      ios_vlan:
+        vlan_id: 6
+        name: guest-vlan
+        interfaces:
+          - GigabitEthernet0/2
+          - GigabitEthernet0/3
+
+    - name: Add corporate VLAN
+      ios_vlan:
+        vlan_id: 7
+        name: corporate-vlan
+        interfaces:
+          - GigabitEthernet0/4
+      
+    - name: Add IoT VLAN
+      ios_vlan:
+        vlan_id: 8
+        name: iot-vlan
+        interfaces:
+          - GigabitEthernet0/5
+        
+    - name: Gather Facts After
+      ios_facts:
+        gather_subset:
+          - interfaces
+      register: fact_dict_after
+
+
+
+
+    
