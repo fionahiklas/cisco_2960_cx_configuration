@@ -2,7 +2,9 @@
 
 Configuration for a Cisco 2960-CX Switch.
 
-The aim is to be able to use Ansible to 
+The aim is to be able to use Ansible to configure the switch and to 
+explore NETCONF and other automatic configuration options.
+
 
 ## Connections
 
@@ -35,7 +37,7 @@ Execute the following commands at the IOS prompt
 
 ```
 enable
-configure terminal  
+configure terminal
 
 hostname cisco2960a
 ip domain-name my.domain.home
@@ -68,7 +70,7 @@ configure terminal
 ip ssh version 2
 ip ssh time-out 120
 ip ssh authentication-retries 3
-line vtp 1 10
+line vty 1 10
 transport input ssh
 end
 ```
