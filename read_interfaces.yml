@@ -1,0 +1,15 @@
+---
+- name: Read the list of interfaces
+  hosts: switch2960cx
+
+  tasks:
+    - name: List interfaces
+      ios_command:
+        commands:
+          - show interfaces
+      register: interface_list
+
+    - name: Debug output
+      debug:
+        msg: "Interfaces: \n {{ interface_list }}"
+
